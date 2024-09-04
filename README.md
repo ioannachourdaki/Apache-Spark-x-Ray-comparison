@@ -5,7 +5,7 @@
 
 * Kefalinos Dionysios, 03119030, email?
 * Pyliotis Athanasios, 03119050, email?
-* Xourdaki Ioanna, 03119203, email?
+* Xourdaki Ioanna, 03119208, email?
 
 
 ## Purpose and Goals
