@@ -1,0 +1,16 @@
+kaggle==1.6.17
+keras==3.5.0
+memory_profiler==0.61.0
+networkx==3.3
+numpy==1.26.4
+pandas==2.2.2
+pillow==10.4.0
+pyarrow==17.0.0
+ray==2.35.0
+scikit-learn==1.5.1
+tensorflow==2.17.0
+torch==2.4.0
+xgboost==2.1.1
+xgboost-ray==0.1.19
+graphframes==
+pyspark==
