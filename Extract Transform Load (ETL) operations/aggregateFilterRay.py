@@ -34,7 +34,7 @@ parser.add_argument('num_years', type=int, choices=[1, 2, 3], help='The number o
 args = parser.parse_args()
 num_years = args.num_years
 
-#Setting the necessary columns that we need
+# Setting the necessary columns that we need
 columns = [
     "PULocationID",
     "DOLocationID",
