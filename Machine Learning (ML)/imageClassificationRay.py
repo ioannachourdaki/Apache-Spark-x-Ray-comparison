@@ -5,6 +5,7 @@ from PIL import Image
 import io
 import time as t
 import os
+import argparse
 import pandas as pd
 from memory_profiler import memory_usage
 
@@ -15,8 +16,20 @@ from tensorflow.keras.preprocessing.image import img_to_array
 
 dataset_start = t.time()
 
-# Number of lines we run the program for
-lines = 50000
+# Custom function to validate that the number of lines is within the valid range
+def valid_lines(value):
+    ivalue = int(value)
+    if ivalue < 1 or ivalue > 202559:
+        raise argparse.ArgumentTypeError(f"Number of lines must be between 1 and 202559. You provided {ivalue}.")
+    return ivalue
+
+# Set up the argument parser
+parser = argparse.ArgumentParser(description='Process the number of lines to read from the dataset.')
+parser.add_argument('lines', type=valid_lines, help='The number of lines must be between 1 and 202559.')
+args = parser.parse_args()
+
+# Store the validated number of lines
+lines = args.lines
 
 # Number of Ray workers that we have
 workers = len(ray.nodes())
@@ -187,7 +200,7 @@ prediction_memory = prediction_mem[-1]
 
 
 # We write the results in a txt file for easier reading later on
-with open('predictionRayTimes.txt', 'a') as file:
+with open('imageClassificationRayTimes.txt', 'a') as file:
     # Write text to the file, with each entry on a separate line
     file.write(f"\nRun\n")
     file.write(f"- Dataset: {lines} rows\n")

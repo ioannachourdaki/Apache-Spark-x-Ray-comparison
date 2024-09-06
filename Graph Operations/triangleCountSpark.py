@@ -3,8 +3,8 @@ from pyspark.sql.functions import col,sum as pysum
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType, DateType
 from graphframes import GraphFrame
 import time as t
-import sys
 from memory_profiler import memory_usage
+import sys
 
 instances = sys.argv[2]
 num_years = sys.argv[1]

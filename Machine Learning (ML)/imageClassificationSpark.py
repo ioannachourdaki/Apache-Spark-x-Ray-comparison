@@ -7,12 +7,34 @@ from PIL import Image
 import io
 import time as t
 from memory_profiler import memory_usage
+import sys
 
 from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications import ResNet50
 
 instances = "3"
+
+# Define the maximum allowed value for the number of lines
+MAX_LINES = 202559
+
+# Ensure the user provided an argument
+if len(sys.argv) < 2:
+    print(f"Usage: {sys.argv[0]} <number_of_lines>")
+    sys.exit(1)
+
+# Try to convert the argument to an integer and validate it
+try:
+    lines = int(sys.argv[1])
+    if lines < 1 or lines > MAX_LINES:
+        print(f"Error: The number of lines must be between 1 and {MAX_LINES}. You provided {lines}.")
+        sys.exit(1)
+except ValueError:
+    print(f"Error: The argument must be an integer. You provided '{sys.argv[1]}'.")
+    sys.exit(1)
+
+# If validation passes, continue with the program logic
+print(f"Processing {lines} lines...")
 
 # UDF to load images from disk
 def load_image(image_path):
@@ -25,7 +47,8 @@ load_image_udf = udf(lambda x: load_image(os.path.join(image_dir, x)), BinaryTyp
 def read(image_dir,annotations_file):
     annotations_df = spark.read.csv(annotations_file, sep=',', header=True, inferSchema=True)
     # The limit below is used to check the time needed for subsets of the dataset
-    #annotations_df = annotations_df.limit(50000)
+    
+    annotations_df = annotations_df.limit(lines)
 
     # Apply the UDF to load the image data
     annotations_df = annotations_df.withColumn("image_data", load_image_udf(col("image_id")))
@@ -125,7 +148,7 @@ model_memory = model_mem[-1]
 
 final_df.show()
 
-with open('sweetRelease.txt', 'a') as file:
+with open('imageClassificationSparkTimes.txt', 'a') as file:
     # Write text to the file with each item on a new line
     file.write(f"\nRun\n")
     file.write(f"- Dataset: {final_df.count()} rows\n")
