@@ -32,6 +32,7 @@ stagemetrics = StageMetrics(spark)
 
 # Read the taxi data from HDFS
 print("Reading data from HDFS...")
+# Add 2019 only for the 2019 files, 2019, 2020 for these 2 years and 2019, 2020, 2021 for 3 years
 taxi_data = spark.read.parquet("hdfs:///taxi_drivers/{2019, 2020, 2021}/*.parquet")
 
 stagemetrics.begin()

@@ -3,11 +3,10 @@ import ray.data
 import time as t
 import networkx as nx
 from memory_profiler import memory_usage
+import argparse
 
 # Used to have all available resources: 6 for 2 nodes and 8 for 3
 ray.autoscaler.sdk.request_resources(num_cpus=8)
-
-num_years = 1
 
 # Read the dataset for the needed number of years
 def read_dataset(num_years, columns):
@@ -23,6 +22,10 @@ def read_dataset(num_years, columns):
     # Read Parquet files into Ray Dataset
     return ray.data.read_parquet(file_paths, columns=columns)
 
+parser = argparse.ArgumentParser(description='Process the number of years to read dataset.')
+parser.add_argument('num_years', type=int, choices=[1, 2, 3], help='The number of years (1, 2, or 3) of data to read.')
+args = parser.parse_args()
+num_years = args.num_years
 
 # Start calculating time and memory for dataset reading
 start_time_dataset = t.time()
