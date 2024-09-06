@@ -4,7 +4,7 @@
 executors=(2 3)
 
 # Define the Python scripts to run
-scripts=("aggregateFilter.py" "sort.py" "transform.py")
+scripts=("aggregateFilterSpark.py" "sortSpark.py" "transformSpark.py")
 
 # Loop through the scripts
 for script in "${scripts[@]}"; do
