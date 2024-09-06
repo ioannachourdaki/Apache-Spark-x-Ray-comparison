@@ -3,10 +3,11 @@ from pyspark.sql.functions import col,sum as pysum
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType, DateType
 from graphframes import GraphFrame
 import time as t
+import sys
 from memory_profiler import memory_usage
 
-instances = "3"
-num_years = 1
+instances = sys.argv[2]
+num_years = sys.argv[1]
 
 # Function to read all the data from HDFS. It can happen per years
 def read_dataframe(num_years, taxi_schema):
