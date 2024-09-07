@@ -1,9 +1,11 @@
 # How to run the graph operations
 --------------------------------------------------------------
 
+### Pagerank
 Pagerank executes the pagerank algorithm on a set of edges from the taxi dataset to see which locations are more popular
 
-Count Triangle is counting the trinagles in the edges representing all the trips the taxis had taken customers
+### Triangle Count
+Triangle Count is counting the trinagles in the edges representing all the trips the taxis had taken customers
 
 ## Spark runs
 
