@@ -26,6 +26,6 @@ spark-submit --conf spark.log.level=WARN imageClassificationSpark.py {0 < num_li
 The amount of workers is based on your clusters configuration. To run the ray programs you need to run the below commands:
 ```bash
 python3 kmeansRay.py 
-python3 randomForestRay.py 
+python3 randomForestRay.py {num_years}
 python3 imageClassificationRay.py {0 < num_lines <= 202559}
 ```
