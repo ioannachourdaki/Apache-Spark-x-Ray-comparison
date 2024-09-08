@@ -18,6 +18,10 @@ instances = "3"
 # Define the maximum allowed value for the number of lines
 MAX_LINES = 202559
 
+# URL to the dataset with celebrities
+image_dir = "/home/taxi_drivers/data/complex/img_align_celeba/img_align_celeba/"
+annotations_file = "/home/taxi_drivers/data/complex/list_attr_celeba.csv"
+
 # Ensure the user provided an argument
 if len(sys.argv) < 2:
     print(f"Usage: {sys.argv[0]} <number_of_lines>")
@@ -105,10 +109,6 @@ spark = SparkSession.builder\
     .config("spark.sql.debug.maxToStringFields", '100')\
     .config("spark.executor.instances", instances)\
     .getOrCreate()
-
-# URL to the dataset with celebrities
-image_dir = "hdfs://master:54310/complex/img_align_celeba/img_align_celeba/"
-annotations_file = "/complex/list_attr_celeba.csv"
 
 # Read the files needed
 dataset_mem, annotations_df = memory_usage((read, (image_dir,annotations_file)), retval=True)

@@ -3,39 +3,20 @@
 ## Authors
 ----------------------------------------------------------------
 
-* Kefalinos Dionysios, 03119030, email?
-* Pyliotis Athanasios, 03119050, email?
-* Chourdaki Ioanna, 03119208, email?
+* Kefalinos Dionysios, 03119030, dion397kef@gmail.com
+* Pyliotis Athanasios, 03119050, athan.pyl@gmail.com
+* Chourdaki Ioanna, 03119208, ioannaxourdaki@gmail.com
 
 
-## Purpose and Goals
+## Contents of this repository
 ----------------------------------------------------------------
+This github contains the programs used to run and compare the frameworks of Apache Spark and Ray through different operations, like ETL operations (filtering, sorting and transforming), Graph operations (Pagerank and Triangle Count) and ML Operations (Kmeans and Random Forest training and Image Classification). There is one folder for each of these containing all the relevant programs along with a guide on how to execute them properly.
 
-blah blah blah blah blah blah blah blah blah
+There exist also some initiation files in order to start and stop spark (HDFS and Yarn) easier and in order to Start a ray cluster with one of 2 workers. There is also the code named "loadTime" that we used to compare the reading time of our dataset for both frameworks.
 
-## Infrastructure used
-----------------------------------------------------------------
+Also, there is a folder named "data" which contains a file instructing you how to download the kaggle datasets needed and how to add them to HDFS.
+Note: HDFS is only used by Apache Spark, the files will need to remain locally for Ray.
 
-For our infrastructure we have 3 machines with different specifications:
+Finally, there is a folder names "installation" which has all the necessary commands for a proper installation of HDFS, Yarn, Ray and the rest of the requirements for this project to work.
 
-Master: 
-* Ubuntu Server LTS 22.04 OS
-* 2 Cores (4vCPUs)
-* 32GB RAM
-* 50GB disk capacity
-
-Worker-1 and worker-2: 
-* Ubuntu Server LTS 22.04 OS
-* 1 Core (2vCPUs)
-* 16GB RAM
-* 50GB disk capacity
-
-To set the hosts names we used `sudo vim /etc/hosts` and added the names like below:
-```
-127.0.0.1       localhost
-10.168.0.*   master
-10.168.0.*   worker-1
-10.168.0.*   worker-2
-```
-And finally un `sudo reboot` in order for the changes to be set.
-
+Feel free to read the outcomes of our work on the report provide in this Github.

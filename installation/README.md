@@ -15,6 +15,15 @@ $ vim ~/.ssh/authorized_keys #worker: copy above output and paste it here
 
 In the case that there are issues with the permissions of the private key, use `sudo chmod 600 id_rsa`
 
+To set the hosts names we used `sudo vim /etc/hosts` and added the names like below: (adjust to the number of VMs you have)
+```
+127.0.0.1       localhost
+10.168.0.*   master
+10.168.0.*   worker-1
+10.168.0.*   worker-2
+```
+And finally un `sudo reboot` in order for the changes to be set.
+
 ## Apache Spark
 
 here we will present the steps needed to install Apache Spark along with Hadoop Distributed File System (HDFS) and Yet Another Resource Negotiator (YARN) for handling the big amount of data that is needed for the scripts.
@@ -246,6 +255,26 @@ sudo pip install ray
 ```
 
 And then other requirements are needed which you can find in the `Requirements.txt` file.
+```bash
+sudo pip install -r Requirements
+```
+
+Requirements.txt has:
+>kaggle==1.6.17 <br>
+>keras==3.5.0 <br>
+>memory_profiler==0.61.0 <br>
+>networkx==3.3 <br>
+>numpy==1.26.4 <br>
+>pandas==2.2.2 <br>
+>pillow==10.4.0 <br>
+>pyarrow==17.0.0 <br>
+>ray==2.35.0 <br>
+>scikit-learn==1.5.1 <br>
+>tensorflow==2.17.0 <br>
+>torch==2.4.0 <br>
+>xgboost==2.1.1 <br>
+>xgboost-ray==0.1.19 <br>
+
 
 Then, in order to initiate Ray you need one command in master and one in each of the workers as follows:
 ```bash
