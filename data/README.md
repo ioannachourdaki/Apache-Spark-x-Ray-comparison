@@ -26,4 +26,4 @@ hdfs dfs -put /taxi_drivers/{2019, 2020, 2021}/
 And like that your datasets are ready to be used!
 
 Note: in our program the parquet files are split in directories based on the years they are in, therefore 2019 ones under 2019 folder etc. 
-The celebA files were loaded from a local storage in both cases of Spark and Ray. They just need to be under the /data/complex directory
+The celebA files were loaded from a local storage in both cases of Spark and Ray. They just need to be under the /data/complex directory. Add it under this directory in all Machines in order for this to work properly.
