@@ -1,4 +1,4 @@
-# How to run the graph operations
+# How to run the Graph Operations
 --------------------------------------------------------------
 
 ### Pagerank
