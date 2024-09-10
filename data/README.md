@@ -1,7 +1,7 @@
 # Guide on downloading the data required
 
 ## Download datasets
-All the data we used were from Kaggle and we have 2 datasets: one of taxi records for the years 2019-2022 and celebA with images of celebrities. The download happens as following:
+All the data we used were from Kaggle and we have 2 datasets: NYC FHV (Uber/Lyft) Trip Data Expanded (2019-2022) including taxi records and CelebA with images of celebrities. The download happens as following:
 ```bash
 # For the Taxi records
 kaggle datasets download -d jeffsinsel/nyc-fhvhv-data
