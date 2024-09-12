@@ -9,6 +9,7 @@ from memory_profiler import memory_usage
 import gc
 
 
+# Select number of years for experiment
 num_years = 2
 
 # Function that reads the data based on years
@@ -56,10 +57,8 @@ def preprocess(combined_ds):
     # Delete combined_ds and free up memory
     del combined_ds
     gc.collect()
-
-    print("drop na")
+    
     df_pandas = df_pandas.dropna()
-    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
     print(df_pandas.head(10))
     print(f"Rows: {df_pandas.shape[0]}")
 
@@ -87,7 +86,7 @@ def kmeans_clustering(model, data):
     predictions = model.fit_predict(data)
     return predictions
 
-# perform siilhouette score on chunks of data
+# Perform siilhouette score on chunks of data
 @ray.remote
 def compute_silhouette_score_chunk(data_chunk, labels_chunk):
     return silhouette_score(data_chunk, labels_chunk)
