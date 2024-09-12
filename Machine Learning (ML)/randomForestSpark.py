@@ -10,15 +10,12 @@ from decimal import Decimal
 from sparkmeasure import StageMetrics
 
 def read(taxi_schema, taxizones_schema):
-    # Read all files (2019-2022) and concatenate them
+    # We use 4, 8 and 12 months for this experiment
     months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
-    years = ["2019", "2020", "2021"]
+    years = ["2019"]
 
     print("Reading dataset...")
-
-    # Execution time and Memory usage measurments for input data
-
-
+    
     df = spark.read.parquet(r"hdfs:///taxi_drivers/2019/fhvhv_tripdata_2019-02.parquet",
                             header=True, schema=taxi_schema)
 
@@ -178,6 +175,7 @@ taxizones_schema = StructType([
     StructField("service_zone", StringType())
 ])
 
+# Execution time and Memory usage measurments for reading
 start_time = t.time()  
 
 dataset_mem, results = memory_usage((read, (taxi_schema,taxizones_schema)), retval=True)
