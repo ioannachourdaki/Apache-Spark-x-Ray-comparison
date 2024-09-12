@@ -13,11 +13,7 @@ def read(taxi_schema):
     months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
     years = ["2019", "2020", "2021"]
 
-
     print("Reading dataset...")
-
-    # Execution time and Memory usage measurments for input data
-    
 
     df = spark.read.parquet(r"hdfs:///taxi_drivers/2019/fhvhv_tripdata_2019-02.parquet",
                             header=True, schema=taxi_schema)
@@ -105,6 +101,7 @@ taxi_schema = StructType([
     StructField("wav_match_flag", StringType())
 ])
 
+# Execution time and Memory usage measurments for reading dataset
 start_time = t.time()
 
 dataset_mem, df = memory_usage((read, (taxi_schema,)), retval=True)
@@ -128,7 +125,6 @@ preprocess_mem, df_assembled = memory_usage((preprocessing, (df,)), retval=True)
 
 # Stop measurements
 end_time = t.time()
-
 preproc_memory = preprocess_mem[-1] # In MB
 preproc_time = end_time - start_time
 
