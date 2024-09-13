@@ -20,4 +20,4 @@ Note: HDFS is only used by Apache Spark, so for Ray, the datasets will need to r
 
 Finally, there is an "installation" folder that contains all the necessary commands for properly installing HDFS, Yarn, Ray, and the other dependencies required for the project to function correctly.
 
-Feel free to explore the results of our work in the "Report.pdf" provided in this GitHub repository, along with the detailed analytical results in the "Results.xlsx" spreadsheet!
+Feel free to explore the results of our work in the "Ray_vs_Spark_Report.pdf" provided in this GitHub repository, along with the detailed analytical results in the "Results.xlsx" spreadsheet!
