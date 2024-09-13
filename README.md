@@ -8,7 +8,7 @@
 * Chourdaki Ioanna, 03119208, ioannaxourdaki@gmail.com
 
 
-## Contents of this repository
+## Repository Contents
 ----------------------------------------------------------------
 
 This GitHub repository contains code for executing and comparing the performance of Apache Spark and Ray frameworks across various operations. These include ETL tasks (filtering, sorting, and transformation), Graph operations (PageRank and Triangle Count), and Machine Learning tasks (Random Forest training, K-Means clustering, and Image classification). The repository is organized into separate folders for each category, with all relevant programs and a detailed guide on how to properly execute them.
