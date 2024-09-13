@@ -2,15 +2,15 @@
 --------------------------------------------------------------
 
 ### Random Forest Classification
-We train a Random Forest model on our Taxi dataset for 1, 2 or 3 years and then evaluate it based on the metric silhouette score.
+We train the Random Forest model on our Taxi dataset for 4, 8 or 12 months and then evaluate it based on the metric Accuracy.
 
 ### K-Means Clustering
-We train a Kmeans model on our Taxi dataset for 1, 2 or 3 years and then evaluate it based on its accuracy.
+We train the K-Means model on our Taxi dataset for 1, 2 or 3 years and then evaluate it based on the metric Silhouette Score.
 
 ### Image Classification
-We use a different dataset (CelebA) with ResNet50 model from tensorflow keras that classifies an image based on the items it has on it.
-Note: we print all the results before we stop counting the execution time because Spark UDFs and Ray maps perform lazy execution, therefore only actually
-      producting results after we ask for them to be printed or used.
+We use a different dataset, CelebA, along with the ResNet50 model from TensorFlow Keras, to classify images based on their contents.
+Note: All results are printed before stopping the execution time measurement, as both Spark UDFs and Ray maps use lazy execution. This means they only produce results
+      when explicitly requested, such as when they are printed or used in further operations.
 
 
 ## Spark runs
