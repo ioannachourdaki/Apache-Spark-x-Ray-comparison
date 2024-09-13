@@ -1,4 +1,4 @@
-# Apache-Spark-x-Ray-comparison
+# Apache-Spark-x-Ray-Comparison
 
 ## Authors
 ----------------------------------------------------------------
@@ -10,13 +10,14 @@
 
 ## Contents of this repository
 ----------------------------------------------------------------
-This github contains the programs used to run and compare the frameworks of Apache Spark and Ray through different operations, like ETL operations (filtering, sorting and transforming), Graph operations (Pagerank and Triangle Count) and ML Operations (Kmeans and Random Forest training and Image Classification). There is one folder for each of these containing all the relevant programs along with a guide on how to execute them properly.
 
-There exist also some initiation files in order to start and stop spark (HDFS and Yarn) easier and in order to Start a ray cluster with one of 2 workers. There is also the code named "loadTime" that we used to compare the reading time of our dataset for both frameworks.
+This GitHub repository contains code for executing and comparing the performance of Apache Spark and Ray frameworks across various operations. These include ETL tasks (filtering, sorting, and transformation), Graph operations (PageRank and Triangle Count), and Machine Learning tasks (Random Forest training, K-Means clustering, and Image classification). The repository is organized into separate folders for each category, with all relevant programs and a detailed guide on how to properly execute them.
 
-Also, there is a folder named "data" which contains a file instructing you how to download the kaggle datasets needed and how to add them to HDFS.
-Note: HDFS is only used by Apache Spark, the files will need to remain locally for Ray.
+Additionally, the repository includes initialization scripts to simplify starting and stopping Apache Spark (HDFS and Yarn), as well as setting up a Ray cluster with 1 or 2 workers. It also features a script named "loadTime" used to compare dataset loading times between the two frameworks.
 
-Finally, there is a folder names "installation" which has all the necessary commands for a proper installation of HDFS, Yarn, Ray and the rest of the requirements for this project to work.
+There is also a "data" folder that contains instructions for downloading the required Kaggle datasets and adding them to HDFS for Apache Spark.
+Note: HDFS is only used by Apache Spark, so for Ray, the datasets will need to remain stored locally.
 
-Feel free to read the outcomes of our work on the report provide in this Github.
+Finally, there is an "installation" folder that contains all the necessary commands for properly installing HDFS, Yarn, Ray, and the other dependencies required for the project to function correctly.
+
+Feel free to explore the results of our work in the "Report.pdf" provided in this GitHub repository, along with the detailed analytical results in the "Results.xlsx" spreadsheet!
