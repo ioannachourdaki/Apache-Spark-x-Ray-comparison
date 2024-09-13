@@ -9,6 +9,7 @@ We train the K-Means model on our Taxi dataset for 1, 2 or 3 years and then eval
 
 ### Image Classification
 We use a different dataset, CelebA, along with the ResNet50 model from TensorFlow Keras, to classify images based on their contents.
+
 Note: All results are printed before stopping the execution time measurement, as both Spark UDFs and Ray maps use lazy execution. This means they only produce results
       when explicitly requested, such as when they are printed or used in further operations.
 
