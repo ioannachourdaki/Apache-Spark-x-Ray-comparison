@@ -7,7 +7,6 @@
 * Pyliotis Athanasios, 03119050, athan.pyl@gmail.com
 * Chourdaki Ioanna, 03119208, ioannaxourdaki@gmail.com
 
-
 ## Repository Contents
 ----------------------------------------------------------------
 
